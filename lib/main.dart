@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_course_practise_2/pages/home_page.dart';
+import 'package:todo_list_app/pages/home_page.dart';
 
 main(List<String> args) => runApp(MyApp());
 

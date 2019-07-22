@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:flutter_course_practise_2/modal/note.dart';
+import 'package:todo_list_app/modal/note.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path_provider/path_provider.dart';

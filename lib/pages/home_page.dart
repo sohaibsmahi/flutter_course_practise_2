@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_course_practise_2/database/database_helper.dart';
-import 'package:flutter_course_practise_2/modal/note.dart';
+import 'package:todo_list_app/database/database_helper.dart';
+import 'package:todo_list_app/modal/note.dart';
 import 'add_reminder.dart';
 
 class HomePage extends StatefulWidget {
