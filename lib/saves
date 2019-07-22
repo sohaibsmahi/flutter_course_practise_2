@@ -1,0 +1,87 @@
+FutureBuilder<List<Note>>(
+        future: DatabaseHelper.db.getNote(),
+        builder: (BuildContext context, AsyncSnapshot<List<Note>> snap){
+          if(snap.hasData)
+            return ListView.builder(
+              itemCount: snap.data.length,
+              itemBuilder: (BuildContext context, int index){
+                Note note = snap.data[index];
+                return ListTile(
+                  leading: Container(
+                    color: setcolor(note),
+                  ),
+                  title: Text(note.title),
+                  subtitle: Text('${note.date}'),
+                );
+              },
+            );
+        },
+      ),
+
+
+
+
+      Color setcolor(Note note){
+    Color color;
+    switch (note.priority) {
+      case 0:
+        color =  Colors.red;
+        break;
+      case 1:
+        color =  Colors.orange;
+        break;
+      case 2:
+        color =  Colors.yellow;
+        break;
+      case 3:
+        color =  Colors.green;
+        break;
+    }
+    return color;
+  }
+
+
+  ListTile(
+            onTap: () {},
+            leading: Icon(Icons.arrow_forward),
+            title: Text('Item'),
+            subtitle: Text('Date'),
+          )
+
+
+
+
+    final Future<Database> dbFuture = databaseHelper.initializeDatabase();
+		dbFuture.then((database) {
+			Future<List<Note>> noteListFuture = databaseHelper.getNoteList();
+			noteListFuture.then((noteList) {
+				setState(() {
+				  this.noteList = noteList;
+				  this.count = noteList.length;
+				});
+			});
+		});
+
+
+
+    FutureBuilder<List<Note>>(
+        future: DatabaseHelper.db.getNote(),
+        builder: (BuildContext context, AsyncSnapshot<List<Note>> snap){
+          if(snap.hasData)
+            return ListView.builder(
+              itemCount: snap.data.length,
+              itemBuilder: (BuildContext context, int index){
+                Note note = snap.data[index];
+                return ListTile(
+                  leading: Container(
+                    color: setColor(note),
+                    child: Icon(Icons.arrow_forward),
+                  ),
+                  title: Text(note.title),
+                  subtitle: Text('${note.date}'),
+                );
+              },
+            );
+          else return Center(child: CircularProgressIndicator(),);
+        },
+      ),
