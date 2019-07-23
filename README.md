@@ -1,4 +1,4 @@
-# flutter_course_practise_2
+# Todo-List-App
 
 A simple Flutter and SQLite project.
 
