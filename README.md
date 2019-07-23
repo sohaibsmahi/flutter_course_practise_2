@@ -1,6 +1,6 @@
 # flutter_course_practise_2
 
-A new Flutter project.
+A simple Flutter and SQLite project.
 
 ## Getting Started
 
